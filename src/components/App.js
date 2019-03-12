@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../stylesheets/App.css';
-import PokeCardContainer from "../container/PokeCardContainer";
-import ButtonContainer from "../container/ButtonContainer";
+import PokeCardContainer from "./PokeCard/PokeCardContainer";
+import ButtonContainer from "./Button/ButtonContainer";
 
 class App extends Component {
   render() {

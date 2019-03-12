@@ -2,15 +2,19 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import rootReducer from './reducers'
+import rootReducer from './redux/pokemon/reducer'
 import createSagaMiddleware from 'redux-saga'
-import mySaga from './sagas';
+import mySaga from './redux/pokemon/sagas';
 import App from './components/App'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
     rootReducer,
+    {
+      toggleId: 0,
+      pokemon: 'Squirtle'
+    },
     applyMiddleware(sagaMiddleware)
 )
 
