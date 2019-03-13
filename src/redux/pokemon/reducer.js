@@ -1,4 +1,7 @@
-export default (state = {}, action) => {
+export default (
+        state = {toggleId: 0, pokemon: 'Squirtle'}, 
+        action
+    ) => {
     switch (action.type) {
         case 'TOGGLE_POKEMON':
             return {

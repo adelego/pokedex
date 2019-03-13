@@ -11,10 +11,6 @@ const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
     rootReducer,
-    {
-      toggleId: 0,
-      pokemon: 'Squirtle'
-    },
     applyMiddleware(sagaMiddleware)
 )
 
