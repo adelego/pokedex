@@ -9,7 +9,7 @@ class PokeCard extends Component{
     render() {
         return (
             <div>
-                <p>a wild {this.props.pokemon} appears !</p>
+                <p>{this.props.name}</p>
                 <img src={this.props.img_url} alt={this.props.pokemon}/>
             </div>
         )

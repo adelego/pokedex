@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects"
+import { call, put, takeEvery } from "redux-saga/effects"
 
 
 const api_get = (id) => (fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -14,5 +14,5 @@ function* getPokemon(action){
 };
 
 export function* pokemonSaga(){
-    yield takeLatest('FETCH_POKEMON', getPokemon)
+    yield takeEvery('FETCH_POKEMON', getPokemon)
 }

@@ -1,16 +1,20 @@
 export default (
         state = {
-            pokemon: 'Squirtle',
-            img_url: ''
+            pokemons: {}
         }, 
         action
     ) => {
     switch (action.type) {
 
         case 'FETCHED_POKEMON':
+            let updatedPokemon = {};
+            updatedPokemon.name = action.response.name;
+            updatedPokemon.img_url = action.response.sprites.front_default;
             return {
-                pokemon: action.response.name,
-                img_url: action.response.sprites.front_default
+                ...state,
+                pokemons: {
+                    ...state.pokemons, [action.response.id]:updatedPokemon
+                }
             }
         default:
             return state
