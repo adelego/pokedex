@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PokeCardContainer/>
+        <PokeCardContainer pokemonId={1}/>
       </div>
     );
   }
