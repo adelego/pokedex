@@ -10,7 +10,7 @@ class PokeCard extends Component{
         return (
             <div>
                 <p>{this.props.name}</p>
-                <img src={this.props.img_url} alt={this.props.pokemon}/>
+                <img src={this.props.imgUrl} alt={this.props.pokemon}/>
             </div>
         )
     }

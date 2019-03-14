@@ -9,7 +9,7 @@ export default (
         case 'FETCHED_POKEMON':
             let updatedPokemon = {};
             updatedPokemon.name = action.response.name;
-            updatedPokemon.img_url = action.response.sprites.front_default;
+            updatedPokemon.imgUrl = action.response.sprites.front_default;
             return {
                 ...state,
                 pokemons: {

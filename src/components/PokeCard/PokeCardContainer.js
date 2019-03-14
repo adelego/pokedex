@@ -7,10 +7,10 @@ const mapStateToProps = (state, ownprops) => {
   let props = state.pokemons[pokemonId] === undefined ?
     {
       name: '',
-      img_url: '',
+      imgUrl: '',
     } : {
-      name: state.pokemons[ownprops.pokemonId].name,
-      img_url: state.pokemons[ownprops.pokemonId].img_url,
+      name: state.pokemons[pokemonId].name,
+      imgUrl: state.pokemons[pokemonId].imgUrl,
     };
     props.pokemonId = pokemonId;
   return(props)
