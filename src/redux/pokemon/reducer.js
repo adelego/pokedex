@@ -7,13 +7,12 @@ export default (
     switch (action.type) {
 
         case 'FETCHED_POKEMON':
-            let updatedPokemon = {};
-            updatedPokemon.name = action.response.name;
-            updatedPokemon.imgUrl = action.response.sprites.front_default;
+            const name = action.response.name;
+            const imgUrl = action.response.sprites.front_default;
             return {
                 ...state,
                 pokemons: {
-                    ...state.pokemons, [action.response.id]:updatedPokemon
+                    ...state.pokemons, [action.response.id]: { name, imgUrl }
                 }
             }
         default:
