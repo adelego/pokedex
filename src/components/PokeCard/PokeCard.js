@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 
-const PokeCard = (props) => (
-    <div>
-        a wild {props.pokemon} appears !
-    </div>
-)
+
+class PokeCard extends Component{
+    componentDidMount(){
+        this.props.fetchPokemon(this.props.pokemonId)
+    }
+
+    render() {
+        return (
+            <div>
+                <p>{this.props.name}</p>
+                <img src={this.props.imgUrl} alt={this.props.pokemon}/>
+            </div>
+        )
+    }
+}
 
 export default PokeCard;

@@ -1,6 +1,5 @@
-export const togglePokemon = (pokemon, toggleId) => {
+export const fetchPokemon = (pokemonId) => {
     return ({
-      type: "TOGGLE_POKEMON",
-      pokemon: pokemon,
-      toggleId: toggleId
+      type: "FETCH_POKEMON",
+      pokemonId
   })};
