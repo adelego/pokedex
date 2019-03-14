@@ -1,8 +1,18 @@
-import { takeLatest } from "redux-saga/effects"
-import { togglePokemon } from "./actions";
+import { call, put, takeLatest } from "redux-saga/effects"
 
-function* mySaga(){
-    yield takeLatest("TOGGLE_POKEMON", togglePokemon)
+
+const api_get = () => (fetch('https://pokeapi.co/api/v2/pokemon/bulbasaur')
+                        .then((response) => (response.json())))
+
+function* getPokemon(){
+    try {
+        const response = yield call(api_get)
+        yield put ({type: 'FETCHED_POKEMON', response})
+    } catch(e){
+        console.log(e)
+    }
 };
 
-export default mySaga;
+export function* pokemonSaga(){
+    yield takeLatest('FETCH_POKEMON', getPokemon)
+}

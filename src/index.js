@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './redux/pokemon/reducer'
 import createSagaMiddleware from 'redux-saga'
-import mySaga from './redux/pokemon/sagas';
+import { pokemonSaga } from './redux/pokemon/sagas';
 import App from './components/App'
 
 const sagaMiddleware = createSagaMiddleware()
@@ -14,7 +14,7 @@ const store = createStore(
     applyMiddleware(sagaMiddleware)
 )
 
-sagaMiddleware.run(mySaga)
+sagaMiddleware.run(pokemonSaga)
 
 render(
   <Provider store={store}>

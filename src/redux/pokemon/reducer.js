@@ -1,12 +1,16 @@
 export default (
-        state = {toggleId: 0, pokemon: 'Squirtle'}, 
+        state = {
+            pokemon: 'Squirtle',
+            img_url: ''
+        }, 
         action
     ) => {
     switch (action.type) {
-        case 'TOGGLE_POKEMON':
+
+        case 'FETCHED_POKEMON':
             return {
-                pokemon: action.pokemon,
-                toggleId: action.toggleId
+                pokemon: action.response.name,
+                img_url: action.response.sprites.front_default
             }
         default:
             return state
